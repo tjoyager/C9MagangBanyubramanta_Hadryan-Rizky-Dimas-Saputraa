@@ -1,8 +1,8 @@
-C9 Magang Banyubramanta - Hadryan Rizky Dimas Saputra
+# C9 Magang Banyubramanta - Hadryan Rizky Dimas Saputra
 
-Repositori ini berisi kumpulan tugas magang untuk divisi Programming. Setiap bagian merepresentasikan satu modul pembelajaran, mulai dari basic controller, computer vision, integrasi AI, hingga simulasi robot bawah air.
+Repositori ini berisi kumpulan tugas magang untuk divisi Programming.
 
-📚 Daftar Isi
+## 📚 Daftar Isi
 
 Tugas 1: Controller & Interfaces
 
@@ -16,11 +16,15 @@ Tugas 5: ROS 2 ke Serial Bridge
 
 Tugas 6: Simulasi Robot Gazebo
 
-[Tugas Magang 1 - Controller]
+---
+
+# [Tugas Magang 1 - Controller]
 
 Paket ini berisi implementasi node kendali dasar yang menerjemahkan input joystick menjadi pesan kustom ROS 2.
 
-🚀 Fungsionalitas
+----
+
+## 🚀 Fungsionalitas
 
 controller_node membaca data mentah dari topik /joy dan mempublikasikan data yang telah diproses ke topik /cmd_vel menggunakan custom message interfaces/msg/ControllerCommand.
 
@@ -34,33 +38,48 @@ Stik Kanan (Vertikal): depth (Kedalaman) - Stateful [0.0, 10.0]
 
 Stik Kanan (Horizontal): yaw (Putar) - Stateful [-180.0, 180.0]
 
+---
+
 ⚙️ Cara Menjalankan
 
-# 1. Build Interface & Controller
+### 1. Build Interface & Controller
+```
 colcon build --packages-select interfaces
 source install/setup.bash
 colcon build --packages-select controller
 source install/setup.bash
+```
 
-# 2. Terminal 1: Jalankan Joy Node (Pastikan Joystick tercolok)
+### 2. Terminal 1: Jalankan Joy Node (Pastikan Joystick tercolok)
+```
 ros2 run joy joy_node
+```
 
-# 3. Terminal 2: Jalankan Controller
+### 3. Terminal 2: Jalankan Controller
+```
 ros2 run controller controller_node
+```
 
-# 4. Terminal 3: Verifikasi Output
+### 4. Terminal 3: Verifikasi Output
+```
 ros2 topic echo /cmd_vel
+```
 
+---
 
-[Tugas Magang 2 - Deteksi Warna OpenCV]
+# [Tugas Magang 2 - Deteksi Warna OpenCV]
 
 Program C++ standalone (non-ROS) yang berfungsi sebagai HSV Color Tuner untuk mendeteksi objek berdasarkan warna dalam video.
+
+---
 
 🚀 Fungsionalitas
 
 Menampilkan video asli, video hasil mask (hitam-putih), dan panel kontrol.
 
 Menyediakan 8 slider (Trackbars) untuk mengatur Hue, Saturation, Value secara real-time.
+
+---
 
 ⚙️ Cara Menjalankan
 
