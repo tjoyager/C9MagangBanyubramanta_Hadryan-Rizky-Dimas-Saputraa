@@ -125,7 +125,7 @@ source install/setup.bash
 
 ### 2. Jalankan Node (Ganti path video sesuai lokasi file Anda)
 ```
-ros2 run opencv_integration video_publisher_node --ros-args -p video_file_path:="/home/user/video.mp4"
+ros2 run opencv_integration video_publisher_node --ros-args -p video_file_path:="/home/hadryan/fourth.mp4"
 ```
 
 ### 3. Visualisasi (Buka rqt_image_view di terminal baru)
