@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="submarine">
+
+    <xacro:include filename="$(find submarine_sim)/description/inertial.xacro"/>
+    <xacro:include filename="$(find submarine_sim)/description/camera.xacro" />
+
+    <xacro:property name="length" value="0.8" /> <xacro:property name="radius" value="0.2" /> <xacro:property name="mass" value="20" />
+
+    <link name="base_link" />
+
+    <link name="chassis">
+        <visual>
+            <geometry>
+                <cylinder length="${length}" radius="${radius}" />
+            </geometry>
+            <origin rpy="0 1.5707 0" xyz="0 0 0"/> 
+            <material name="yellow">
+                <color rgba="1 1 0 1"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder length="${length}" radius="${radius}" />
+            </geometry>
+            <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+        </collision>
+
+        <xacro:inertial mass="${mass}" x="${length}" y="${radius*2}" z="${radius*2}"/>
+    </link>
+
+    <joint name="base_link_chassis_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="chassis" />
+        <origin xyz="0 0 0" />
+    </joint>
+
+    <xacro:camera parent_link="chassis">
+        <origin xyz="${length/2} 0 0" rpy="0 0 0"/>
+    </xacro:camera>
+
+    <gazebo>
+        <plugin name="rov_controller" filename="librov_controller.so">
+             <ros>
+                <namespace>/rov</namespace>
+             </ros>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/Yellow</material>
+        <gravity>0</gravity> 
+    </gazebo>
+
+</robot>

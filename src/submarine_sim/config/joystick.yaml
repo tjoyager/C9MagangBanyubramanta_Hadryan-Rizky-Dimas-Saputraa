@@ -1,0 +1,38 @@
+teleop_twist_joy_node:
+  ros__parameters:
+    # ==================================================
+    # KONFIGURASI XBOX 360 CONTROLLER
+    # ==================================================
+    
+    # TOMBOL PENGAMAN (DEADMAN SWITCH)
+    # Set 'true' jika ingin robot hanya gerak saat tombol A ditahan.
+    # Set 'false' jika ingin langsung gerak tanpa tahan tombol.
+    require_enable_button: false
+    enable_button: 0  # Tombol 'A' (Hijau)
+    
+    # MAPPING AXIS (GERAKAN)
+    axis_linear:
+      x: 1        # Stick Kiri (Atas/Bawah) -> Maju/Mundur
+      y: 0        # Stick Kiri (Kiri/Kanan) -> Geser Samping (Sway)
+      z: 4        # Stick Kanan (Atas/Bawah) -> Naik/Turun (Heave)
+    
+    axis_angular:
+      yaw: 3      # Stick Kanan (Kiri/Kanan) -> Putar Kiri/Kanan
+      pitch: 7    # D-Pad (Atas/Bawah) -> Nungging (Opsional)
+      roll: 6     # D-Pad (Kiri/Kanan) -> Miring (Opsional)
+
+    # KECEPATAN (SCALE)
+    # Ubah angka ini untuk mempercepat/memperlambat robot
+    scale_linear:
+      x: 2.0
+      y: 2.0
+      z: 2.0
+    
+    scale_angular:
+      yaw: 1.5
+      pitch: 0.5
+      roll: 0.5
+    
+    # Agar tombol Enable (A) tidak perlu ditekan terus menerus (Toggle)
+    # Ubah ke true jika ingin sekali tekan nyala, sekali tekan mati.
+    enable_turbo_button: -1
