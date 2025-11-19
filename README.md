@@ -92,7 +92,7 @@ g++ deteksi_warna.cpp -o deteksi_app $(pkg-config --cflags --libs opencv4)
 
 ### 2. Jalankan Program
 ```
-./deteksi_app nama_video_anda.mp4
+./deteksi_app second.mp4
 ```
 
 Tekan 'q' atau ESC untuk keluar.
