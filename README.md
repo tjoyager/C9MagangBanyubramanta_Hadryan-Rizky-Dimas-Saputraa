@@ -163,7 +163,7 @@ source install/setup.bash
 
 ### 2. Jalankan Node Deteksi (Gunakan Absolute Path!)
 ```
-ros2 run vision_ov_yolo yolo_detector --ros-args -p model_path:="/home/user/ros2_ws/src/vision_ov_yolo/models/best.onnx" -p video_path:="/home/user/ros2_ws/src/vision_ov_yolo/data/fourth.mp4"
+ros2 run vision_ov_yolo yolo_detector --ros-args -p model_path:="/home/hadryan/ros2_ws/src/vision_ov_yolo/models/best.onnx" -p video_path:="/home/hadryan/ros2_ws/src/vision_ov_yolo/data/fourth.mp4"
 ```
 
 ### 3. Visualisasi
